@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>VC Transportes - Controle de Pedidos</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>VC Transportes - Controle de Pedidos</h1>
+
+    <div class="formulario">
+      <div style="width: 23%;">
+        <input type="text" id="numeroPedido" placeholder="Número do Pedido">
+      </div>
+      <div style="width: 23%;">
+        <label for="dataPedido" style="display:block; margin-bottom:5px; font-weight:bold;">Data de Chegada</label>
+        <input type="date" id="dataPedido">
+      </div>
+      <div style="width: 23%;">
+        <label for="vencimentoPedido" style="display:block; margin-bottom:5px; font-weight:bold;">Vencimento do Pedido</label>
+        <input type="date" id="vencimentoPedido">
+      </div>
+      <div style="width: 23%; display: flex; align-items: flex-end;">
+        <button onclick="adicionarPedido()">Adicionar Pedido</button>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <input type="text" id="filtroBusca" placeholder="Buscar pedido por número..." oninput="atualizarListas()"
+        style="padding: 10px 20px; width: 100%; border-radius: 10px; border: 2px solid #e0e0e0;">
+    </div>
+
+    <div class="resumos">
+      <p><strong>Pedidos de Hoje:</strong> <span id="pedidosHoje">0</span></p>
+      <p><strong>Pedidos Vencidos:</strong> <span id="pedidosVencidos">0</span></p>
+    </div>
+
+    <div class="listas">
+      <h2>Pedidos Pendentes</h2>
+      <ul id="listaPedidos"></ul>
+
+      <h2>Pedidos Finalizados</h2>
+      <ul id="listaFinalizados"></ul>
+    </div>
+
+    <div class="calendario">
+      <h2>Histórico de Finalizados no Calendário</h2>
+      <input type="month" id="mesSelecionado" value="">
+      <div id="gradeCalendario"></div>
+      <div id="historicoPedidos"></div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
